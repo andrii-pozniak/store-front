@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Logo = styled.div`
 display: flex;
-padding: 0 58px;
 `;
 export const FistWord = styled.p`
 font-family: ${p => p.theme.fonts.body};
@@ -45,7 +44,6 @@ letter-spacing: -0.01em;
 color:  ${p => p.theme.colors.dark};
 `;
 export const Text = styled.div`
-padding: 0 58px;
 margin: 0;
 font-family: ${p => p.theme.fonts.body};
 font-style: normal;
