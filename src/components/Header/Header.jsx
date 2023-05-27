@@ -7,12 +7,11 @@ import { HeaderBody } from "./Header.style";
 export const Header = () => {
   return (
     <>
-    <HeaderInfo/>
-    <HeaderBody>      
-      <HeaderLogo/>
-      <HeaderNavMenu />
-    </HeaderBody>
+      <HeaderInfo />
+      <HeaderBody>
+        <HeaderLogo />
+        <HeaderNavMenu />
+      </HeaderBody>
     </>
-    
   );
 };
