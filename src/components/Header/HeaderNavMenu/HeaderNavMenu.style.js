@@ -77,7 +77,7 @@ align-items: center;
 margin-top: 0;
 width: 22px;
 height: 22px;
-border-radius: 50%;
+border-radius: ${p => p.theme.radii.round};
 background: ${p => p.theme.colors.accent};
 `;
 export const AllMenu = styled.div`

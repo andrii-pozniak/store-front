@@ -9,6 +9,7 @@ export const theme = {
       headerText: '#181C27',
       background: '#438DD6',
       backgroundSecondary: '#F6D860',
+      backgroundAlert: '#EA5C2B',
       grayBackground: 'rgba(255, 255, 255, 0.6)',
       secondary: '#3091EB',
       accent: '#95CD41',
