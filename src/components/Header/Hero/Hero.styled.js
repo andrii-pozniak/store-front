@@ -6,10 +6,6 @@ import { ReactComponent as ThreeSvg } from "../../Header/assest/Polygon3.svg";
 import { ReactComponent as FourSvg } from "../../Header/assest/Polygon4.svg";
 import { ReactComponent as FiveSvg } from "../../Header/assest/Polygon5.svg";
 
-
-
-
-
 export const HeroBackground = styled.div`
   position: relative;
   width: 100%;
@@ -90,7 +86,7 @@ export const SecondPage = styled.p`
 export const Rings = styled.div`
   position: absolute;
   left: 64%;
-    top: 20%;
+  top: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,31 +103,30 @@ export const RingOne = styled.div`
   opacity: 0.51;
 `;
 export const RingSecond = styled.div`
-display: flex;
+  display: flex;
   justify-content: center;
   width: 270px;
   height: 270px;
   border: 1px solid ${(p) => p.theme.colors.white};
   border-radius: ${(p) => p.theme.radii.round};
   background: transparent;
-  
 `;
 export const BtnBuy = styled.button`
- position: absolute;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%);
-padding: 15px 50px;
-margin: 0;
-border: none;
-font-weight: ${p => p.theme.fontWeights.middle};
-font-size:  ${p => p.theme.fontSizes.m};
-line-height: ${p => p.theme.lineHeights.heading};
-color:  ${p => p.theme.colors.white};
-background: ${p => p.theme.colors.dark};
+  padding: 15px 50px;
+  margin: 0;
+  border: none;
+  font-weight: ${(p) => p.theme.fontWeights.middle};
+  font-size: ${(p) => p.theme.fontSizes.m};
+  line-height: ${(p) => p.theme.lineHeights.heading};
+  color: ${(p) => p.theme.colors.white};
+  background: ${(p) => p.theme.colors.dark};
 `;
 export const Inform = styled.div`
-position: absolute;
+  position: absolute;
   right: 24px;
   bottom: 24px;
   display: grid;
@@ -139,13 +134,11 @@ position: absolute;
   gap: 8px;
 `;
 export const PageInform = styled.p`
-
-margin: 0;
-font-family: ${(p) => p.theme.fonts.body};
-font-style: normal;
-font-weight: ${p => p.theme.fontWeights.normal};
-font-size:  ${p => p.theme.fontSizes.xs};
-line-height: ${p => p.theme.lineHeights.heading};
-color:  ${p => p.theme.colors.dark};
+  margin: 0;
+  font-family: ${(p) => p.theme.fonts.body};
+  font-style: normal;
+  font-weight: ${(p) => p.theme.fontWeights.normal};
+  font-size: ${(p) => p.theme.fontSizes.xs};
+  line-height: ${(p) => p.theme.lineHeights.heading};
+  color: ${(p) => p.theme.colors.dark};
 `;
-

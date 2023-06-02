@@ -5,9 +5,6 @@ import  Category from "./pages/Category";
 import  Product from "./pages/Product";
 import  {SharedLayout} from "./SharedLayout/SharedLayout";
 
-
-
-
 function App() {
   return (
     <>
@@ -16,12 +13,9 @@ function App() {
         <Route index element={<HomePage/>}/>
         <Route path="category" element={<Category/>}/>
         <Route path='product' element={<Product/>}/>
-
       </Route>
     </Routes>
- <div className="App">
-     <h1>Hello</h1>
-    </div>
+ 
     </>
    
   );
