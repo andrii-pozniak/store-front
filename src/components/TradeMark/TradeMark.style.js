@@ -4,7 +4,6 @@ export const Image = styled.img`
 width: 134px;
 `;
 export const ImageFour = styled.img`
-/* width: 124px; */
 height: 19px;
 `;
 
