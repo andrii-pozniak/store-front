@@ -1,15 +1,15 @@
 import React from "react";
 import { Logo, FistWord, SecondWord, Text, Number } from "./HeaderLogo.style";
 
-export const HeaderLogo = () => {
+export const HeaderLogo = ({ secondWordColor, colorNumber }) => {
   return (
-    <div>
+    <>
       <Logo>
         <FistWord>PLUS</FistWord>
-        <SecondWord>МІНУС</SecondWord>
-        <Number>7</Number>
+        <SecondWord color={secondWordColor}>МІНУС</SecondWord>
+        <Number color={colorNumber}>7</Number>
       </Logo>
-      <Text>інтернет магазин</Text>
-    </div>
+      <Text color={colorNumber}>інтернет магазин</Text>
+    </>
   );
 };

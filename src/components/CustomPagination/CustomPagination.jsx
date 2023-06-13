@@ -12,6 +12,7 @@ export const CustomPagination = ({ productsPerPage, totalProducts, paginate, cat
 
   return (
     <Pagination
+    sx={{ml: "auto"}}
       count={totalPages}
       page={currentPage}
       onChange={handlePageChange}

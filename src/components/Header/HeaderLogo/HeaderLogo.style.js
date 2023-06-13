@@ -16,7 +16,7 @@ align-items: flex-end;
 color:  ${p => p.theme.colors.accent};
 `;
 export const Number = styled.p`
-border: 0.6px solid #333333;
+border: 0.6px solid ${(props) => props.color};
 margin: 0;
 margin-top: 11px;
 margin-left: 3px;
@@ -27,7 +27,7 @@ font-style: normal;
 font-weight: ${p => p.theme.fontWeights.middle};
 font-size:  ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.lineHeights.heading};
-color:  ${p => p.theme.colors.dark}; 
+color: ${(props) => props.color};
 
 `;
 export const SecondWord = styled.p`
@@ -41,7 +41,7 @@ line-height: ${p => p.theme.lineHeights.heading};
 display: flex;
 align-items: flex-end;
 letter-spacing: -0.01em;
-color:  ${p => p.theme.colors.dark};
+color: ${(props) => props.color};
 `;
 export const Text = styled.div`
 margin: 0;
@@ -50,5 +50,5 @@ font-style: normal;
 font-weight: ${p => p.theme.fontWeights.normal};
 font-size:  ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.lineHeights.heading};
-color:  ${p => p.theme.colors.dark}; 
+color: ${(props) => props.color}; 
 `;

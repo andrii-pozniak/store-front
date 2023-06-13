@@ -15,7 +15,7 @@ import {
   SvgStar,
   SvgFeedback,
   StarBody,
-  CardInfo
+  CardInfo,
 } from "./ProductCard.style";
 
 import {
@@ -24,7 +24,6 @@ import {
 } from "../Header/HeaderNavMenu/HeaderNavMenu.style";
 
 export const ProductCard = ({
-  
   name,
   imageURL,
   additionalCategory,
@@ -36,7 +35,7 @@ export const ProductCard = ({
     "Знижки",
     "Кращі цінові пропозиції",
     "Новинки",
-    "Безкоштовно"
+    "Безкоштовно",
   ];
 
   additionalCategory.sort((a, b) => {
@@ -45,9 +44,12 @@ export const ProductCard = ({
   return (
     <CardBody>
       <CodCategory>
-        <CategoryPage> {additionalCategory.map((category) => (
-              <CategoryItem key={category} category={category} />
-            ))}</CategoryPage>
+        <CategoryPage>
+          {" "}
+          {additionalCategory.map((category) => (
+            <CategoryItem key={category} category={category} />
+          ))}
+        </CategoryPage>
         <CodPage>Код: {codeProduct}</CodPage>
       </CodCategory>
       <Image src={imageURL} alt={name} />
@@ -60,8 +62,8 @@ export const ProductCard = ({
           <SvgStar />
           <SvgStar />
           <SvgStar />
-          <SvgFeedback /> 5 
-        </StarBody> 
+          <SvgFeedback /> 5
+        </StarBody>
         <BtnHeard button="button">
           <SvgWeight /> В обране
         </BtnHeard>

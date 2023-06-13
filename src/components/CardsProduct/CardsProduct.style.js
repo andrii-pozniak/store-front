@@ -10,8 +10,8 @@ export const CardProduct = styled.div`
 
 export const Header = styled.h2`
   margin: 0;
-  margin-top: 108px;
-  padding: 0 60px;
+ 
+  margin-right: 8px;
   font-family: ${(p) => p.theme.fonts.body};
   font-style: normal;
   font-weight: ${(p) => p.theme.fontWeights.interBold};
@@ -19,4 +19,22 @@ export const Header = styled.h2`
   line-height: ${(p) => p.theme.lineHeights.heading};
   text-transform: uppercase;
   color: ${(p) => p.theme.colors.dark};
+`;
+
+export const PagePagination = styled.div`
+display: flex;
+padding: 0 60px;
+align-items: start;
+/* justify-content: ; */
+margin-top: 108px;
+`;
+
+export const PageCount = styled.p`
+margin: 0;
+font-family: ${(p) => p.theme.fonts.body};
+  font-style: normal;
+  font-weight: ${(p) => p.theme.fontWeights.interBold};
+  font-size: ${(p) => p.theme.fontSizes.xs};
+  line-height: ${(p) => p.theme.lineHeights.heading};
+  color: ${(p) => p.theme.colors.backgroundAlert};
 `;

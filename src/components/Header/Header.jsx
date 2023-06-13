@@ -9,7 +9,9 @@ export const Header = () => {
     <>
       <HeaderInfo />
       <HeaderBody>
-        <HeaderLogo />
+        <HeaderLogo
+          secondWordColor='#333333'
+          colorNumber='#333333'/>
         <HeaderNavMenu />
       </HeaderBody>
     </>
