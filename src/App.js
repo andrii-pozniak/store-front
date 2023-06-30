@@ -11,7 +11,7 @@ function App() {
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<HomePage/>}/>
-        <Route path="category" element={<Category/>}/>
+        <Route path="category/:categoryName" element={<Category/>}/>
         <Route path='product' element={<Product/>}/>
       </Route>
     </Routes>

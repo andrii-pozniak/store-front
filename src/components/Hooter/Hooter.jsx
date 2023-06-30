@@ -1,37 +1,54 @@
 import React from "react";
 import { Grid, Divider } from "@mui/material";
-import { HeaderLogo } from "../Header/HeaderLogo/HeaderLogo";
-import { StyleTypography, StyleContainer } from "./Hooter.Style";
+import { ColumnOne } from "./columnOne";
+import { ColumnSecond } from "./columnSecond";
+import { ColumnThird } from "./colunmThird";
+import { ColumnFour } from "./colunmFour";
+import { CategoriesLink } from "../CategoryLink/CategoryLink";
+import { StyleContainer, StyleGrid } from "./Hooter.Style";
 
-export const Hooter = () => {
+export const Hooter = ({ uniqueCategories }) => {
+  console.log("data", uniqueCategories)
   return (
-    <div style={{ marginTop: "24px" }}>
-<StyleContainer disableGutters maxWidth={false}>
-      <Grid container spacing={3}>
-        <Grid item xs={true}>
-          <HeaderLogo secondWordColor="white" colorNumber="white" />
-          <StyleTypography>
-            Высокотехнологичная продукции с современным дизайном
-          </StyleTypography>
+    <>
+     <StyleContainer disableGutters maxWidth={false}>
+        <Grid container spacing={4}margin={0} width={"100%"}>
+          <StyleGrid item xs={true} >
+            <ColumnOne />
+          </StyleGrid>
+
+          <Divider
+            orientation="vertical"
+            flexItem
+            color="#FFFFFF"
+            height="100%"
+          />
+          <StyleGrid item xs={true} sx={{ paddingTop: "72px" }}>
+            <ColumnSecond uniqueCategories={uniqueCategories} />
+          </StyleGrid>
+          <Divider
+            orientation="vertical"
+            flexItem
+            color="#FFFFFF"
+            height="100%"
+          />
+          <StyleGrid item xs={true}>
+            <ColumnThird />
+          </StyleGrid>
+          <Divider orientation="vertical" flexItem color="#FFFFFF" />
+          <StyleGrid item xs={true} sx={{ padding: "0px" }}>
+            <ColumnFour />
+          </StyleGrid>
+          <Divider
+            orientation="vertical"
+            flexItem
+            color="#FFFFFF"
+            height="100%"
+          />
         </Grid>
-        <Divider
-          orientation="vertical"
-          flexItem
-          color="#FFFFFF"
-          height="100%"
-        />
-        <Grid item xs={true} sx={{ padding: "0px" }}>ыавпар</Grid>
-        <Divider
-          orientation="vertical"
-          flexItem
-          color="#FFFFFF"
-          height="100%"
-        />
-        <Grid item xs={true}>фВЫАВПА</Grid>
-        <Divider orientation="vertical" flexItem color="#FFFFFF" />
-      </Grid>
-    </StyleContainer>
-    </div>
-    
+      </StyleContainer>
+   <CategoriesLink uniqueCategories={uniqueCategories}/>
+    </>
+     
   );
 };

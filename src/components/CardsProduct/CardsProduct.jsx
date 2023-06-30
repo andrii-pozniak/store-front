@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ProductCard } from "../ProductCard/ProductCard";
+import { Hooter } from "../Hooter/Hooter";
 import { fetchProductCards } from "../../Utils/api/getCard";
 import {
   CardProduct,
@@ -15,6 +16,8 @@ export const CardsProducts = () => {
   const [discountedProducts, setDiscountedProducts] = useState([]);
   const [bestSellingProducts, setBestSellingProducts] = useState([]);
   const [newArrivals, setNewArrivals] = useState([]);
+  const [uniqueCategories, setUniqueCategories] = useState([]);
+
   const [currentPage, setCurrentPage] = useState({
     discounted: 1,
     bestSelling: 1,
@@ -36,6 +39,7 @@ export const CardsProducts = () => {
     })();
   }, []);
 
+ console.log("data", data);
   useEffect(() => {
     if (data) {
       const items = data;
@@ -57,6 +61,16 @@ export const CardsProducts = () => {
     }
   }, [data]);
 
+  console.log("categoryName", data);
+  console.log("uniqueCategories", uniqueCategories);
+  useEffect(() => {
+    if (data && data.length > 0) {
+      const categoryNames = data.map((item) => item.categoryName);
+      const uniqueNames = Array.from(new Set(categoryNames));
+      setUniqueCategories(uniqueNames);
+    }
+  }, [data]);
+
   const paginate = (pageNumber, category) => {
     setCurrentPage((prevCurrentPage) => ({
       ...prevCurrentPage,
@@ -75,7 +89,8 @@ export const CardsProducts = () => {
   };
 
   return (
-    <div>
+    <>
+  
       <PagePagination>
         <Header>Кращі цінові пропозиції</Header>
         <PageCount>{discountedProducts.length} товари</PageCount>
@@ -173,6 +188,10 @@ export const CardsProducts = () => {
           <p>Нет товаров для отображения</p>
         )}
       </CardProduct>
-    </div>
+   
+    <Hooter uniqueCategories={uniqueCategories}/>
+    {/* <UnderHooter/> */}
+      </>
+   
   );
 };

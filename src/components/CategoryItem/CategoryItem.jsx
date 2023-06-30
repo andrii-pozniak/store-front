@@ -9,7 +9,6 @@ import {
 } from "./CategoryItem.style";
 
 const CategoryItem = ({ category }) => {
-  console.log("first", category);
   switch (category) {
     case "Знижки":
       return <HitPage>Знижки</HitPage>;
