@@ -70,21 +70,7 @@ export const CountPage = styled.p`
 
 export const CategoryPage = styled.div`
   position: absolute;
-  margin-top: 15px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  background: ${(p) => p.theme.colors.backgroundAlert};
-  border: none;
-  border-radius: ${(p) => p.theme.radii.round};
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: ${(p) => p.theme.lineHeights.heading};
-  color: ${(p) => p.theme.colors.white}; */
+  margin-top: 15px; 
 `;
 
 export const CodCategory = styled.div`
@@ -103,7 +89,7 @@ export const Span = styled.span`
 `;
 
 export const BtnBuy = styled.button`
-  padding: 14px 11px;
+  padding: 11px 14px;
   margin: 0;
   border: none;
   border-radius: 3px;

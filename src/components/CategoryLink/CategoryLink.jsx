@@ -11,7 +11,7 @@ export const CategoriesLink = ({ uniqueCategories }) => {
           <Container>
             {uniqueCategories.map((category, index) => (
               <ItemGrid container spacing={2} margin={0} key={index}>
-                <CategoryLink to={`/category/categoryName=${category}`}>{category}</CategoryLink>
+                <CategoryLink to={`/category/${category}`}>{category}</CategoryLink>
                 <ArrowSvg />
               </ItemGrid>
             ))}
