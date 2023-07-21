@@ -13,10 +13,19 @@ import {
   SvgWeight,
   SvgBag,
   BtnMenu,
-  Count
+  Count,
+  BadgeStyle,
 } from "./HeaderNavMenu.style";
+import { ListItemIcon } from "@mui/material";
 
-export const HeaderNavMenu = () => {
+export const HeaderNavMenu = ({
+  handleCart,
+  orderLength,
+  handleFavorite,
+  lengthFavorite
+
+}) => {
+
   return (
     <AllMenu>
       <AllProducts>
@@ -35,15 +44,24 @@ export const HeaderNavMenu = () => {
         <BtnMenu type="button">
           <SvgSearch />
         </BtnMenu>
+        <ListItemIcon sx={{ justifyContent: "center", alignItems: "center" }}>
+          <BadgeStyle color="secondary" badgeContent={orderLength}>
+            <SvgBag onClick={handleCart} />
+          </BadgeStyle>
+        </ListItemIcon>
+        <ListItemIcon sx={{ justifyContent: "center", alignItems: "center" }}>
+          <BadgeStyle color="secondary" badgeContent={lengthFavorite}>
+            <SvgWeight onClick={handleFavorite} />
+          </BadgeStyle>
+        </ListItemIcon>
         <BtnMenu type="button">
-          <SvgBag /><Count>5</Count>
+          <SvgHeard />
+          <Count>5</Count>
         </BtnMenu>
-        <BtnMenu type="button">
-          <SvgHeard /><Count>5</Count>
-        </BtnMenu>
-        <BtnMenu type="button">
-          <SvgWeight /><Count>5</Count>
-        </BtnMenu>
+        {/* <BtnMenu type="button">
+          <SvgWeight />
+          <Count>5</Count>
+        </BtnMenu> */}
       </BtnNav>
     </AllMenu>
   );

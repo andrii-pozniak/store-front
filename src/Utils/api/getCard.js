@@ -17,3 +17,12 @@ export const fetchCategoriesName = async (categoryName) => {
   }
 };
 
+export const fetchCartId = async id => {
+  try {
+
+    const response = await axios.get(`/product/${id}`);
+    return response.data;
+  } catch (error) {
+  }
+};
+

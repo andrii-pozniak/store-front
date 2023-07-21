@@ -8,7 +8,7 @@ import { CategoriesLink } from "../CategoryLink/CategoryLink";
 import { StyleContainer, StyleGrid } from "./Hooter.Style";
 
 export const Hooter = ({ uniqueCategories }) => {
-  console.log("data", uniqueCategories)
+  // console.log("data", uniqueCategories)
   return (
     <>
      <StyleContainer disableGutters maxWidth={false}>

@@ -37,10 +37,10 @@ export const ButtonOk = styled.button`
   font-style: normal;
 `;
 export const HeaderItem = styled.div`
-display: flex;
-align-items: start;
-gap: 8px;
-margin-bottom: 28px;
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  margin-bottom: 28px;
   font-family: ${(p) => p.theme.fonts.body};
   font-style: normal;
   font-weight: ${(p) => p.theme.fontWeights.interBold};
@@ -50,17 +50,15 @@ margin-bottom: 28px;
   text-transform: uppercase;
 `;
 export const ContainerCard = styled.div`
-display: flex;
-flex-wrap: wrap;
-gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 `;
 export const SpanFood = styled.span`
-
-font-family: ${(p) => p.theme.fonts.body};
+  font-family: ${(p) => p.theme.fonts.body};
   font-style: normal;
   font-weight: ${(p) => p.theme.fontWeights.interMiddle};
   font-size: ${(p) => p.theme.fontSizes.m};
   line-height: ${(p) => p.theme.lineHeights.heading};
   color: ${(p) => p.theme.colors.backgroundAlert};
-
 `;

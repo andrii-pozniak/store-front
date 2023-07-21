@@ -23,6 +23,7 @@ export const theme = {
       body: 'Montserrat',
     },
     fontSizes: {
+      sm: '10px',
       xs: '12px',
       s: '14px',
       m: '16px',

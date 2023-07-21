@@ -6,9 +6,9 @@ const HomePage = () => {
   return (
     <>
      
-        <Hero />
-        <TradeMark />
-        <CardsProducts />      
+      <Hero />
+      <TradeMark />
+      <CardsProducts />
     </>
   );
 };

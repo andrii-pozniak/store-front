@@ -1,5 +1,10 @@
 import React from "react";
-import { CategoryLink, Container, ContainerGrid, ItemGrid } from "./CategoriesLink.style";
+import {
+  CategoryLink,
+  Container,
+  ContainerGrid,
+  ItemGrid,
+} from "./CategoriesLink.style";
 import { Grid } from "@mui/material";
 import { ReactComponent as ArrowSvg } from "../Header/assest/HoterImg/arrow.svg";
 
@@ -11,12 +16,13 @@ export const CategoriesLink = ({ uniqueCategories }) => {
           <Container>
             {uniqueCategories.map((category, index) => (
               <ItemGrid container spacing={2} margin={0} key={index}>
-                <CategoryLink to={`/category/${category}`}>{category}</CategoryLink>
+                <CategoryLink to={`/category/${category}`}>
+                  {category}
+                </CategoryLink>
                 <ArrowSvg />
               </ItemGrid>
             ))}
           </Container>
-          
         </ContainerGrid>
       </Grid>
     </>

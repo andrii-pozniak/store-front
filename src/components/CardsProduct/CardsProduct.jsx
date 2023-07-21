@@ -32,14 +32,14 @@ export const CardsProducts = () => {
         const fetchedData = await fetchProductCards();
         setStatus("fulfilled");
         setData(fetchedData);
-        console.log("data", fetchedData);
+        // console.log("data", fetchedData);
       } catch (error) {
         setStatus("rejected");
       }
     })();
   }, []);
 
- console.log("data", data);
+//  console.log("data", data);
   useEffect(() => {
     if (data) {
       const items = data;
@@ -47,7 +47,7 @@ export const CardsProducts = () => {
         item.additionalCategory.includes("Кращі цінові пропозиції")
       );
       setDiscountedProducts(discounted);
-      console.log("first", data);
+      // console.log("first", data);
 
       const bestSelling = items?.filter((item) =>
         item.additionalCategory.includes("Хіти продаж")
@@ -61,8 +61,6 @@ export const CardsProducts = () => {
     }
   }, [data]);
 
-  console.log("categoryName", data);
-  console.log("uniqueCategories", uniqueCategories);
   useEffect(() => {
     if (data && data.length > 0) {
       const categoryNames = data.map((item) => item.categoryName);
@@ -82,7 +80,7 @@ export const CardsProducts = () => {
     if (!products) {
       return [];
     }
-    console.log("discountedProducts", products);
+    // console.log("discountedProducts", products);
     const indexOfLastProduct = pageNumber * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     return products.slice(indexOfFirstProduct, indexOfLastProduct);
@@ -176,6 +174,7 @@ export const CardsProducts = () => {
           ).map((item) => (
             <ProductCard
               key={item._id}
+              id={item._id}
               name={item.name}
               imageURL={item.imageURL}
               additionalCategory={item.additionalCategory}
@@ -190,7 +189,7 @@ export const CardsProducts = () => {
       </CardProduct>
    
     <Hooter uniqueCategories={uniqueCategories}/>
-    {/* <UnderHooter/> */}
+    
       </>
    
   );

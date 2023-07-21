@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Badge } from "@mui/material";
 import { ReactComponent as AllProductsSvg } from '../../Header/assest/menu.svg';
 import { ReactComponent as SearchSvg } from '../../Header/assest/search.svg';
 import { ReactComponent as HeardSvg } from '../../Header/assest/heard.svg';
@@ -23,6 +24,18 @@ font-weight: ${p => p.theme.fontWeights.middle};
 font-size:  ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.lineHeights.heading};
 color:  ${p => p.theme.colors.white};
+`;
+export const BadgeStyle = styled(Badge)`
+ & .MuiBadge-badge {
+  background: ${p => p.theme.colors.accent};
+  font-family: ${p => p.theme.fonts.body};
+font-style: normal;
+font-weight: ${p => p.theme.fontWeights.normal};
+font-size:  ${p => p.theme.fontSizes.sm};
+line-height: ${p => p.theme.lineHeights.heading};
+color:  ${p => p.theme.colors.dark};
+ 
+}
 `;
 export const SvgSearch = styled(SearchSvg)`
   margin-left: 0px;

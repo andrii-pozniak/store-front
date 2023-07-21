@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { fetchCategoriesName } from "../../Utils/api/getCard";
 import { useParams } from "react-router-dom";
-import { ProductCard } from "../../components/ProductCard/ProductCard";
-import { Grid, Slider } from "@mui/material";
-import {
-  StyledValueDisplay,
-  ContainerNumber,
-  ButtonOk,
-  HeaderItem,
-  ContainerCard,
-  SpanFood,
-} from "./Category.style";
-import { NativeSelects } from "../../components/Category/NativeSelects";
+import { Grid } from "@mui/material";
+import { FindParameters } from "../../components/Category/FindPrice";
+import { ProductCategoryCards } from "../../components/Category/ProductCategory"
 
 const Category = () => {
   const [data, setData] = useState(null);
@@ -37,6 +29,7 @@ const Category = () => {
     fetchData(categoryName);
   }, [categoryName]);
 
+  
   const handleChangeValue = (event, newValue) => {
     setValue([newValue[0], newValue[1]]);
   };
@@ -51,49 +44,10 @@ const Category = () => {
         paddingTop={"35px"}
         gap={"29px"}
       >
-        <Grid
-          item
-          xs={3}
-          padding={"38px 16px"}
-          border={" 1px solid #d6d6d6"}
-          borderRadius={"3px"}
-        >
-          <ContainerNumber>
-            <StyledValueDisplay>{value[0]}</StyledValueDisplay>
-            <StyledValueDisplay>{value[1]}</StyledValueDisplay>
-            <ButtonOk>Ok</ButtonOk>
-          </ContainerNumber>
-
-          <Slider
-            value={value}
-            onChange={handleChangeValue}
-            valueLabelDisplay="auto"
-            aria-labelledby="discrete-slider-restrict"
-            max={100000}
-            sx={{ color: "#95CD41" }}
-          />
-        </Grid>
-        <Grid item xs={9} width={"100%"}>
-          {data && (
-            <HeaderItem>
-              {categoryName} <SpanFood>{data.length} товари</SpanFood>
-            </HeaderItem>
-          )}
-          <NativeSelects/>
-          <ContainerCard>
-            {data?.map((item) => (
-              <ProductCard
-                key={item._id}
-                name={item.name}
-                imageURL={item.imageURL}
-                additionalCategory={item.additionalCategory}
-                codeProduct={item.codeProduct}
-                priceProduct={item.priceProduct}
-                status={item.status}
-              />
-            ))}
-          </ContainerCard>
-        </Grid>
+        <FindParameters handleChangeValue={handleChangeValue} value={value}/>
+        
+        <ProductCategoryCards data={data} categoryName={categoryName} />
+        
       </Grid>
     </>
   );
