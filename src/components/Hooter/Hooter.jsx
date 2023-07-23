@@ -47,7 +47,7 @@ export const Hooter = ({ uniqueCategories }) => {
           />
         </Grid>
       </StyleContainer>
-   <CategoriesLink uniqueCategories={uniqueCategories}/>
+   {/* <CategoriesLink uniqueCategories={uniqueCategories}/> */}
     </>
      
   );

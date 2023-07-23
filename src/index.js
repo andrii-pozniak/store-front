@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { ThemeProvider } from "styled-components";
-
+import { DataProvider } from "../src/components/Context/DataContext";
 import { BrowserRouter } from "react-router-dom";
 import { theme } from "./theme";
 // import reportWebVitals from './reportWebVitals';
@@ -13,7 +13,9 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <BrowserRouter basename="store-front">
+      <DataProvider>
         <App />
+        </DataProvider>
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>

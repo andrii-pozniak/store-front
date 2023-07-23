@@ -8,6 +8,7 @@ import { DataContext } from "../Context/DataContext";
 import { FavoriteLengthContext } from "../Context/FavoriteLengthContext";
 import { fetchCartId } from "../../Utils/api/getCard";
 import { FavoriteCard } from "../Favorite/Favorite";
+import { ComparedCard } from "../Compared/Compared";
 
 export const Header = () => {
   const {
@@ -15,12 +16,15 @@ export const Header = () => {
     order,
     handleBuyClick,
     handleFavoriteClick,
+    handleComparedClick,
     setOrder,
     favorite,
-    removeForFavorite
+    compared,
+    removeForFavorite,
+    removeForCompared
   } = useContext(DataContext);
 
-  const { favoriteLength } = useContext(FavoriteLengthContext);
+  const { favoriteLength, comparedLength } = useContext(FavoriteLengthContext);
 
   const [, setStatus] = useState("pending");
   const [data, setData] = useState(null);
@@ -48,6 +52,7 @@ export const Header = () => {
 
   const [isCartOpen, setCartOpen] = useState(false);
   const [isFavoriteOpen, setFavoriteOpen] = useState(false);
+  const [isComparedOpen, setComparedOpen] = useState(false);
   return (
     <>
       <HeaderInfo />
@@ -56,8 +61,10 @@ export const Header = () => {
         <HeaderNavMenu
           orderLength={orderLength}
           lengthFavorite={favoriteLength}
+          lengthCompared={comparedLength}
           handleCart={() => setCartOpen(true)}
           handleFavorite={() => setFavoriteOpen(true)}
+          handleCompared={() => setComparedOpen(true)}
         />
       </HeaderBody>
       <Basket
@@ -77,6 +84,14 @@ export const Header = () => {
         removeForFavorite={removeForFavorite} 
         favoriteOpen={isFavoriteOpen}
         closeFavorite={() => setFavoriteOpen(false)}
+      />
+      <ComparedCard       
+        id={id}
+        compared={compared}
+        handleComparedClick={handleComparedClick} 
+        removeForCompared={removeForCompared} 
+        comparedOpen={isComparedOpen}
+        closeCompared={() => setComparedOpen(false)}
       />
     </>
   );

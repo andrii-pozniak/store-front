@@ -44,6 +44,11 @@ export const SvgSearch = styled(SearchSvg)`
 export const SvgHeard = styled(HeardSvg)`
   margin-left: 0px;
 `;
+export const CheckedSvgHeard = styled(HeardSvg)`
+  margin-left: 0px;
+  border-radius: ${p => p.theme.radii.round};
+  background: ${p => p.theme.colors.accent};
+`;
 export const SvgWeight = styled(WeightSvg)`
   margin-left: 0px;
 `;
@@ -55,7 +60,7 @@ export const ProductsSvg = styled(AllProductsSvg)`
 `;
 export const BtnNav = styled.div`
 display: grid;
-grid-template-columns: 90px 90px 90px 90px;
+grid-template-columns: repeat(4, 80px);
 margin-left: 69px;
 `;
 export const Button = styled.button`

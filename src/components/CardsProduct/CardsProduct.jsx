@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { ProductCard } from "../ProductCard/ProductCard";
-import { Hooter } from "../Hooter/Hooter";
-import { fetchProductCards } from "../../Utils/api/getCard";
+import { CategoriesLink } from "../CategoryLink/CategoryLink";
+
 import {
   CardProduct,
   Header,
@@ -9,14 +9,14 @@ import {
   PageCount,
 } from "./CardsProduct.style";
 import { CustomPagination } from "../CustomPagination/CustomPagination";
+import { DataContext } from "../Context/DataContext";
 
 export const CardsProducts = () => {
-  const [, setStatus] = useState("pending");
-  const [data, setData] = useState(null);
   const [discountedProducts, setDiscountedProducts] = useState([]);
   const [bestSellingProducts, setBestSellingProducts] = useState([]);
   const [newArrivals, setNewArrivals] = useState([]);
-  const [uniqueCategories, setUniqueCategories] = useState([]);
+
+  const { data, uniqueCategories } = useContext(DataContext);
 
   const [currentPage, setCurrentPage] = useState({
     discounted: 1,
@@ -26,28 +26,12 @@ export const CardsProducts = () => {
   const productsPerPage = 4;
 
   useEffect(() => {
-    (async () => {
-      try {
-        setStatus("pending");
-        const fetchedData = await fetchProductCards();
-        setStatus("fulfilled");
-        setData(fetchedData);
-        // console.log("data", fetchedData);
-      } catch (error) {
-        setStatus("rejected");
-      }
-    })();
-  }, []);
-
-//  console.log("data", data);
-  useEffect(() => {
     if (data) {
       const items = data;
       const discounted = items?.filter((item) =>
         item.additionalCategory.includes("Кращі цінові пропозиції")
       );
       setDiscountedProducts(discounted);
-      // console.log("first", data);
 
       const bestSelling = items?.filter((item) =>
         item.additionalCategory.includes("Хіти продаж")
@@ -58,14 +42,6 @@ export const CardsProducts = () => {
         item.additionalCategory.includes("Новинки")
       );
       setNewArrivals(newProducts);
-    }
-  }, [data]);
-
-  useEffect(() => {
-    if (data && data.length > 0) {
-      const categoryNames = data.map((item) => item.categoryName);
-      const uniqueNames = Array.from(new Set(categoryNames));
-      setUniqueCategories(uniqueNames);
     }
   }, [data]);
 
@@ -80,7 +56,6 @@ export const CardsProducts = () => {
     if (!products) {
       return [];
     }
-    // console.log("discountedProducts", products);
     const indexOfLastProduct = pageNumber * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     return products.slice(indexOfFirstProduct, indexOfLastProduct);
@@ -88,7 +63,6 @@ export const CardsProducts = () => {
 
   return (
     <>
-  
       <PagePagination>
         <Header>Кращі цінові пропозиції</Header>
         <PageCount>{discountedProducts.length} товари</PageCount>
@@ -187,10 +161,7 @@ export const CardsProducts = () => {
           <p>Нет товаров для отображения</p>
         )}
       </CardProduct>
-   
-    <Hooter uniqueCategories={uniqueCategories}/>
-    
-      </>
-   
+      <CategoriesLink uniqueCategories={uniqueCategories} />
+    </>
   );
 };

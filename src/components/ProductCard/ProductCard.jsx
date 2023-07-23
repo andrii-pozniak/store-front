@@ -15,7 +15,6 @@ import {
   Span,
   BtnBuy,
   StatusPage,
-  BtnHeard,
   SvgStar,
   SvgFeedback,
   StarBody,
@@ -23,7 +22,7 @@ import {
 } from "./ProductCard.style";
 
 import {
-  SvgHeard,  
+  SvgHeard, CheckedSvgHeard 
 } from "../Header/HeaderNavMenu/HeaderNavMenu.style";
 
 export const ProductCard = ({
@@ -35,6 +34,7 @@ export const ProductCard = ({
   priceProduct,
   status,
 }) => {
+  console.log("id", id)
   const sortOrder = [
     "Знижки",
     "Кращі цінові пропозиції",
@@ -44,11 +44,13 @@ export const ProductCard = ({
   const {
     handleBuyClick,
     handleFavoriteClick, 
+    handleComparedClick,
+    removeForCompared,
     removeForFavorite   
   } = useContext(DataContext);
-  const{ setFavoriteLength,  } = useContext(FavoriteLengthContext)
+  const{ setFavoriteLength, setComparedLength } = useContext(FavoriteLengthContext)
   const [isFavorite, setIsFavorite] = useState(false);
-  // const [favoriteLength, setFavoriteLength] = useState(0);
+  const [isCompared, setIsCompared] = useState(false);
   
   const handleButtonClick = () => {
     handleBuyClick({
@@ -58,11 +60,10 @@ export const ProductCard = ({
       priceProduct,
     });
   };
-// console.log("isFavorite", isFavorite)
+
 const handleFavoriteCheckboxChange = () => {
   setIsFavorite(prevIsFavorite => !prevIsFavorite);
 
-  // Используем обновленное состояние isFavorite вместо прежнего значения
   if (!isFavorite) {
     setFavoriteLength((prevLength) => prevLength + 1);
     handleFavoriteClick({
@@ -70,6 +71,8 @@ const handleFavoriteCheckboxChange = () => {
       name,
       imageURL,
       priceProduct,
+      additionalCategory,
+      codeProduct,
       isFavorite: true,
     });
   } else {
@@ -79,13 +82,44 @@ const handleFavoriteCheckboxChange = () => {
       name,
       imageURL,
       priceProduct,
+      additionalCategory,
+      codeProduct,
       isFavorite: false,
       
     } );
-    removeForFavorite()
+    removeForFavorite( id)
   }
 };
 
+const handleComparedCheckboxChange = () => {
+  setIsCompared(prevIsCompared => !prevIsCompared);
+
+  if (!isCompared) {
+    setComparedLength((prevLength) => prevLength + 1);
+    handleComparedClick({
+      id,
+      name,
+      imageURL,
+      priceProduct,
+      additionalCategory,
+      codeProduct,
+      isCompared: true,
+    });
+  } else {
+    setComparedLength((prevLength) => prevLength - 1);
+    handleComparedClick({
+      id,
+      name,
+      imageURL,
+      priceProduct,
+      additionalCategory,
+      codeProduct,
+      isCompared: false,
+      
+    } );
+    removeForCompared( id)
+  }
+};
   additionalCategory.sort((a, b) => {
     return sortOrder.indexOf(a) - sortOrder.indexOf(b);
   });
@@ -112,9 +146,7 @@ const handleFavoriteCheckboxChange = () => {
           <SvgStar />
           <SvgFeedback /> 5
         </StarBody>
-        {/* <BtnHeard button="button" onClick={() => handleButtonClick()}>
-          <SvgWeight onClick={() => handleButtonClick()} /> В обране
-        </BtnHeard> */}
+       
         <FormControlLabel
           control={
             <Checkbox
@@ -127,9 +159,19 @@ const handleFavoriteCheckboxChange = () => {
           }
           label="В обране"
         />
-        <BtnHeard button="button" onClick={() => handleButtonClick()}>
-          <SvgHeard /> Порівняти
-        </BtnHeard>
+       
+        <FormControlLabel
+          control={
+            <Checkbox
+              icon={<SvgHeard />}
+              checkedIcon={<CheckedSvgHeard/>}
+              name="checkedH"
+              checked={isCompared}
+              onChange={() => handleComparedCheckboxChange(id)}
+            />
+          }
+          label="Порівняти"
+        />
         <CountPage>
           {priceProduct} <Span>грн</Span>
         </CountPage>

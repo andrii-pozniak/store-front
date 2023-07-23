@@ -22,8 +22,9 @@ export const HeaderNavMenu = ({
   handleCart,
   orderLength,
   handleFavorite,
-  lengthFavorite
-
+  lengthFavorite,
+  lengthCompared,
+  handleCompared
 }) => {
 
   return (
@@ -54,10 +55,15 @@ export const HeaderNavMenu = ({
             <SvgWeight onClick={handleFavorite} />
           </BadgeStyle>
         </ListItemIcon>
-        <BtnMenu type="button">
+        <ListItemIcon sx={{ justifyContent: "center", alignItems: "center" }}>
+          <BadgeStyle color="secondary" badgeContent={lengthCompared}>
+            <SvgHeard onClick={handleCompared} />
+          </BadgeStyle>
+        </ListItemIcon>
+        {/* <BtnMenu type="button">
           <SvgHeard />
           <Count>5</Count>
-        </BtnMenu>
+        </BtnMenu> */}
         {/* <BtnMenu type="button">
           <SvgWeight />
           <Count>5</Count>

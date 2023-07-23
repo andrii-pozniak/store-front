@@ -35,7 +35,6 @@ useEffect(() => {
   const uniqueFavorite = removeDuplicatesById(favorite);
   SetNewFavorite(uniqueFavorite);
 }, [favorite, removeDuplicatesById]);
-console.log("newFavorite", newFavorite)
 
   return (
     <Drawer anchor="right" open={favoriteOpen} onClose={closeFavorite}>
