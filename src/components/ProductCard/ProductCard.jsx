@@ -34,7 +34,6 @@ export const ProductCard = ({
   priceProduct,
   status,
 }) => {
-  console.log("id", id)
   const sortOrder = [
     "Знижки",
     "Кращі цінові пропозиції",

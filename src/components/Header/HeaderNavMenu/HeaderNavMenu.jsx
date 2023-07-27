@@ -13,7 +13,6 @@ import {
   SvgWeight,
   SvgBag,
   BtnMenu,
-  Count,
   BadgeStyle,
 } from "./HeaderNavMenu.style";
 import { ListItemIcon } from "@mui/material";

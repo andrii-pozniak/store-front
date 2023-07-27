@@ -4,7 +4,6 @@ import { ColumnOne } from "./columnOne";
 import { ColumnSecond } from "./columnSecond";
 import { ColumnThird } from "./colunmThird";
 import { ColumnFour } from "./colunmFour";
-import { CategoriesLink } from "../CategoryLink/CategoryLink";
 import { StyleContainer, StyleGrid } from "./Hooter.Style";
 
 export const Hooter = ({ uniqueCategories }) => {

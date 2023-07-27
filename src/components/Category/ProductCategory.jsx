@@ -1,30 +1,40 @@
-import React from "react";
-import { ProductCard } from "../../components/ProductCard/ProductCard";
+import React, { useState } from "react";
 import { NativeSelects } from "../../components/Category/NativeSelects";
 import { HeaderItem, ContainerCard, SpanFood } from "./Category.style";
+import { CustomPagination } from "../CustomPagination/CustomPagination";
+import { GetCurrentProducts } from "../CardsProduct/GetCurrentProducts";
 
-export const ProductCategoryCards = ({ data, categoryName }) => {
+export const ProductCategoryCards = ({ data, category }) => {
+  const [productsPerPage, setProductsPerPage] = useState(12); 
+  const [currentPage , setCurrentPage] = useState(1);
+  console.log("category", category)
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    
+  };
   return (
     <>
       {data && (
         <HeaderItem>
-          {categoryName} <SpanFood>{data.length} товари</SpanFood>
+          {category} <SpanFood>{data.length} товари</SpanFood>
         </HeaderItem>
       )}
-      <NativeSelects />
+      <NativeSelects setProductsPerPage={setProductsPerPage}/>
       <ContainerCard>
-        {data?.map((item) => (
-          <ProductCard
-            key={item._id}
-            name={item.name}
-            imageURL={item.imageURL}
-            additionalCategory={item.additionalCategory}
-            codeProduct={item.codeProduct}
-            priceProduct={item.priceProduct}
-            status={item.status}
+      <GetCurrentProducts
+          products={data}
+          category={category}
+          pageNumber={currentPage} 
+          productsPerPage={productsPerPage}
           />
-        ))}
+       
       </ContainerCard>
+     { data && <CustomPagination
+        productsPerPage={productsPerPage}
+        totalProducts={data.length}
+        paginate={paginate}
+        category={data.category}
+      />}
     </>
   );
 };

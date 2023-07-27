@@ -9,7 +9,9 @@ import {
 
 export const FindParameters = ({ value, handleChangeValue }) => {
   return (
-    <>
+    <div style={{padding: "42px 16px 38px 16px",
+    border: " 1px solid #d6d6d6",
+    borderRadius: "3px"}}>
       <ContainerNumber>
         <StyledValueDisplay>{value[0]}</StyledValueDisplay>
         <StyledValueDisplay>{value[1]}</StyledValueDisplay>
@@ -24,6 +26,6 @@ export const FindParameters = ({ value, handleChangeValue }) => {
         max={100000}
         sx={{ color: "#95CD41" }}
       />
-    </>
+    </div>
   );
 };

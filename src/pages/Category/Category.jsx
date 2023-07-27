@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { fetchCategoriesName } from "../../Utils/api/getCard";
 import { useParams } from "react-router-dom";
 import { Grid } from "@mui/material";
@@ -6,24 +6,46 @@ import { FindParameters } from "../../components/Category/FindPrice";
 import { ProductCategoryCards } from "../../components/Category/ProductCategory";
 import { YouSaw } from "../../components/Category/YouSaw";
 import { Text, HeaderText } from "../../components/Category/Category.style";
-import { ContainerPage } from "./Category.style";
+import { ContainerPage, Item, Container } from "./Category.style";
+import { DataContext } from "../../components/Context/DataContext";
+import { GetCurrentProducts } from "../../components/CardsProduct/GetCurrentProducts";
+
+import { CustomPagination } from "../../components/CustomPagination/OnePagination";
 
 const Category = () => {
-  const [data, setData] = useState(null);
+  const [dataCategory, setDataCategory] = useState(null);
   const [, setStatus] = useState("pending");
   const [value, setValue] = useState([0, 100000]);
   const { categoryName } = useParams();
-  console.log("categoryName", categoryName);
+  const { data } = useContext(DataContext);
+  const [currentPage, setCurrentPage] = useState({ Новинки: 1 });
+  const [NewProducts, setNewProducts] = useState([]);
+  const productsPerPage = 1;
+
+  const paginate = (pageNumber, category) => {
+    setCurrentPage((prevCurrentPage) => ({
+      ...prevCurrentPage,
+      [category]: pageNumber,
+    }));
+  };
+
+  useEffect(() => {
+    if (data) {
+      const NewProducts = data?.filter((item) =>
+        item.additionalCategory.includes("Новинки")
+      );
+      setNewProducts(NewProducts);
+    }
+  }, [data]);
 
   useEffect(() => {
     const fetchData = async (categoryName) => {
       try {
         setStatus("pending");
-        const data = await fetchCategoriesName(categoryName);
+        const dataCategory = await fetchCategoriesName(categoryName);
 
         setStatus("fulfilled");
-        setData(data);
-        console.log("first", data);
+        setDataCategory(dataCategory);
       } catch {
         setStatus("rejected");
       }
@@ -35,6 +57,7 @@ const Category = () => {
   const handleChangeValue = (event, newValue) => {
     setValue([newValue[0], newValue[1]]);
   };
+
   return (
     <ContainerPage>
       <Grid container columnSpacing={3.5}>
@@ -42,14 +65,35 @@ const Category = () => {
           item
           xs={12}
           md={3}
-          padding={"38px 16px"}
-          border={" 1px solid #d6d6d6"}
-          borderRadius={"3px"}
+          
         >
           <FindParameters handleChangeValue={handleChangeValue} value={value} />
+          {NewProducts && NewProducts.length > 0 ? (
+            <>
+              <Container>
+                <Item>Новинки</Item>
+                <CustomPagination
+                  style={{ marginRight: "auto" }}
+                  productsPerPage={productsPerPage}
+                  totalProducts={NewProducts.length}
+                  paginate={paginate}
+                  category="Новинки"
+                />
+              </Container>
+
+              <GetCurrentProducts
+                products={NewProducts}
+                category={"Новинки"}
+                pageNumber={currentPage.Новинки}
+                productsPerPage={productsPerPage}
+              />
+            </>
+          ) : (
+            <p>Нет товаров для отображения</p>
+          )}
         </Grid>
         <Grid item xs={12} md={9}>
-          <ProductCategoryCards data={data} categoryName={categoryName} />
+          <ProductCategoryCards data={dataCategory} category={categoryName} />
           <HeaderText>Опис категорії</HeaderText>
           <div style={{ display: "flex", marginBottom: 177 }}>
             <div

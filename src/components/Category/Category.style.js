@@ -53,6 +53,7 @@ export const ContainerCard = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  margin-bottom: 40px;
 `;
 export const SpanFood = styled.span`
   font-family: ${(p) => p.theme.fonts.body};

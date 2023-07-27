@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { ProductCard } from "../ProductCard/ProductCard";
+// import { ProductCard } from "../ProductCard/ProductCard";
 import { CategoriesLink } from "../CategoryLink/CategoryLink";
 
 import {
@@ -9,6 +9,7 @@ import {
   PageCount,
 } from "./CardsProduct.style";
 import { CustomPagination } from "../CustomPagination/CustomPagination";
+import { GetCurrentProducts } from "../CardsProduct/GetCurrentProducts";
 import { DataContext } from "../Context/DataContext";
 
 export const CardsProducts = () => {
@@ -52,15 +53,6 @@ export const CardsProducts = () => {
     }));
   };
 
-  const getCurrentProducts = (products, category, pageNumber) => {
-    if (!products) {
-      return [];
-    }
-    const indexOfLastProduct = pageNumber * productsPerPage;
-    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-    return products.slice(indexOfFirstProduct, indexOfLastProduct);
-  };
-
   return (
     <>
       <PagePagination>
@@ -76,22 +68,12 @@ export const CardsProducts = () => {
 
       <CardProduct>
         {discountedProducts && discountedProducts.length > 0 ? (
-          getCurrentProducts(
-            discountedProducts,
-            "discounted",
-            currentPage.discounted
-          ).map((item) => (
-            <ProductCard
-              key={item._id}
-              id={item._id}
-              name={item.name}
-              imageURL={item.imageURL}
-              additionalCategory={item.additionalCategory}
-              codeProduct={item.codeProduct}
-              priceProduct={item.priceProduct}
-              status={item.status}
-            />
-          ))
+          <GetCurrentProducts
+          products={discountedProducts}
+          category={"discounted"}
+          pageNumber={currentPage.discounted} 
+          productsPerPage={productsPerPage}
+          />
         ) : (
           <p>Нет товаров для отображения</p>
         )}
@@ -108,22 +90,13 @@ export const CardsProducts = () => {
       </PagePagination>
 
       <CardProduct>
-        {bestSellingProducts && bestSellingProducts.length > 0 ? (
-          getCurrentProducts(
-            bestSellingProducts,
-            "bestSelling",
-            currentPage.bestSelling
-          ).map((item) => (
-            <ProductCard
-              key={item._id}
-              name={item.name}
-              imageURL={item.imageURL}
-              additionalCategory={item.additionalCategory}
-              codeProduct={item.codeProduct}
-              priceProduct={item.priceProduct}
-              status={item.status}
-            />
-          ))
+        {bestSellingProducts && bestSellingProducts.length > 0 ? (         
+            <GetCurrentProducts
+            products={bestSellingProducts}
+            category={"bestSelling"}
+            pageNumber={currentPage.discounted} 
+            productsPerPage={productsPerPage}
+            />          
         ) : (
           <p>Нет товаров для отображения</p>
         )}
@@ -141,22 +114,12 @@ export const CardsProducts = () => {
 
       <CardProduct>
         {newArrivals && newArrivals.length > 0 ? (
-          getCurrentProducts(
-            newArrivals,
-            "newArrivals",
-            currentPage.newArrivals
-          ).map((item) => (
-            <ProductCard
-              key={item._id}
-              id={item._id}
-              name={item.name}
-              imageURL={item.imageURL}
-              additionalCategory={item.additionalCategory}
-              codeProduct={item.codeProduct}
-              priceProduct={item.priceProduct}
-              status={item.status}
-            />
-          ))
+           <GetCurrentProducts
+           products={newArrivals}
+           category={"newArrivals"}
+           pageNumber={currentPage.newArrivals} 
+           productsPerPage={productsPerPage}
+           />         
         ) : (
           <p>Нет товаров для отображения</p>
         )}

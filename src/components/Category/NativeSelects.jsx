@@ -7,18 +7,28 @@ const FormControl = styled('div')`
   min-width: 120px;
 `;
 
-export const NativeSelects = () => {
+export const NativeSelects = ({ setProductsPerPage }) => {
   const [state, setState] = useState({
-    
-    name: 'hai',
+    sort: "",
+    perPage: 12,
   });
 
   const handleChangeSort = (event) => {
     const name = event.target.name;
-    setState({
-      ...state,
-      [name]: event.target.value,
-    });
+    const value = event.target.value;
+
+    if (name === "sort") {
+      setState({
+        ...state,
+        sort: value,
+      });
+    } else if (name === "perPage") {
+      setState({
+        ...state,
+        perPage: value,
+      });
+      setProductsPerPage(value); 
+    }
   };
 
   return (
@@ -44,20 +54,19 @@ export const NativeSelects = () => {
       </FormControl> 
       <Item style={{ marginLeft: 'auto' }}>Показувати:</Item>  
       <FormControl variant="outlined" sx={{ minWidth: 120 }}>
-        <SelectStyle
+      <SelectStyle
           native
-          value={state.sort}
-          onChange={handleChangeSort}
-          
+          value={state.productsPerPage}
+          onChange={handleChangeSort} 
           inputProps={{
-            name: 'sort',
-            id: 'outlined-sort-native-simple',
+            name: "perPage", 
+            id: "outlined-perPage-native-simple", 
           }}
         >
-          <option aria-label="None" value=""/>
-          <option value={10}>10</option>
-          <option value={15}>15</option>
-          <option value={20}>20</option>
+          <option aria-label="None" value="12"/>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+          <option value={5}>5</option>
         </SelectStyle>
       </FormControl>     
     </ContainerSort>

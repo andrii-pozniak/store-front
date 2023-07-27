@@ -5,7 +5,6 @@ import { ContainerCard } from "./Category.style";
 
 export const YouSaw = () => {
   const { order, favorite, compared } = useContext(DataContext);
-  console.log("favorite", favorite);
   return (
     <>
       {(Boolean(order.length) ||
