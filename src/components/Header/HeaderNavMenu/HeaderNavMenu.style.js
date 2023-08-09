@@ -5,7 +5,21 @@ import { ReactComponent as SearchSvg } from '../../Header/assest/search.svg';
 import { ReactComponent as HeardSvg } from '../../Header/assest/heard.svg';
 import { ReactComponent as WeightSvg } from '../../Header/assest/weight.svg';
 import { ReactComponent as BagSvg } from '../../Header/assest/bag.svg';
+import { Link } from "react-router-dom";
 
+export const StyleLink = styled(Link)`
+border: none;
+padding: 0 6px;
+background: transparent;
+text-decoration: none;
+font-family: ${p => p.theme.fonts.body};
+font-style: normal;
+font-weight: ${p => p.theme.fontWeights.interMiddle};
+font-size:  ${p => p.theme.fontSizes.xs};
+line-height: ${p => p.theme.lineHeights.heading};
+text-transform: uppercase;
+color:  ${p => p.theme.colors.dark};
+`;
 
 export const AllProducts = styled.div`
 width: 211px;
@@ -106,5 +120,5 @@ margin-left: 49px;
 export const BlockBtn = styled.div`
 display: flex;
 margin-left: 57px;
-
+align-items: center;
 `;

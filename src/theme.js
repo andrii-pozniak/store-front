@@ -14,6 +14,7 @@ export const theme = {
       backgroundGreen: '#0BB812',
       backgroundAlert: '#EA5C2B',
       grayBackground: 'rgba(255, 255, 255, 0.6)',
+      gray: '#D6D6D6',
       secondary: '#000000',
       accent: '#95CD41',
       activeAccent: '#FF6101',

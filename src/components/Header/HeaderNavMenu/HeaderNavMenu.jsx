@@ -1,5 +1,4 @@
 import React from "react";
-// import { ReactComponent as AllProductsSvg } from '../../Header/assest/menu.svg';
 import {
   AllProducts,
   BtnAllProducts,
@@ -14,6 +13,7 @@ import {
   SvgBag,
   BtnMenu,
   BadgeStyle,
+  StyleLink
 } from "./HeaderNavMenu.style";
 import { ListItemIcon } from "@mui/material";
 
@@ -34,9 +34,9 @@ export const HeaderNavMenu = ({
       </AllProducts>
       <BlockBtn>
         <Button>Акції</Button>
-        <Button>ДОСТАВКА</Button>
-        <Button>Гарантії</Button>
-        <Button>ОПЛАТА</Button>
+        <StyleLink to={"paymentDelivery"}>ДОСТАВКА</StyleLink>
+        <StyleLink to={"paymentDelivery"}>Гарантії</StyleLink>
+        <StyleLink to={"paymentDelivery"}>ОПЛАТА</StyleLink>
         <Button>опт</Button>
         <Button>контакти</Button>
       </BlockBtn>

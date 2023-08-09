@@ -9,7 +9,9 @@ export const StyleGrid = styled(Grid)`
 
 export const StyleContainer = styled.div`
   background: ${(p) => p.theme.colors.dark};
-  width: 100%;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
 `;
 
 export const StyleTypography = styled.p`

@@ -4,6 +4,7 @@ import  HomePage from "./pages/HomePage";
 import  Category from "./pages/Category";
 import  Product from "./pages/Product";
 import  {SharedLayout} from "./SharedLayout/SharedLayout";
+import { PaymentDelivery } from "../src/pages/PaymentDelivery/PaymentDelivery";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route index element={<HomePage/>}/>
         <Route path="category/:categoryName" element={<Category/>}/>
         <Route path='product' element={<Product/>}/>
+        <Route path='paymentDelivery' element={<PaymentDelivery/>}/>
       </Route>
     </Routes>
  
