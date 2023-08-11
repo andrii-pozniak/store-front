@@ -35,7 +35,7 @@ export const HeaderNavMenu = ({
       <BlockBtn>
         <Button>Акції</Button>
         <StyleLink to={"paymentDelivery"}>ДОСТАВКА</StyleLink>
-        <StyleLink to={"paymentDelivery"}>Гарантії</StyleLink>
+        <StyleLink to={"guarantee"}>Гарантії</StyleLink>
         <StyleLink to={"paymentDelivery"}>ОПЛАТА</StyleLink>
         <Button>опт</Button>
         <Button>контакти</Button>
@@ -59,14 +59,7 @@ export const HeaderNavMenu = ({
             <SvgHeard onClick={handleCompared} />
           </BadgeStyle>
         </ListItemIcon>
-        {/* <BtnMenu type="button">
-          <SvgHeard />
-          <Count>5</Count>
-        </BtnMenu> */}
-        {/* <BtnMenu type="button">
-          <SvgWeight />
-          <Count>5</Count>
-        </BtnMenu> */}
+       
       </BtnNav>
     </AllMenu>
   );

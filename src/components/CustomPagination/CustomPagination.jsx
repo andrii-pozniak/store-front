@@ -9,8 +9,6 @@ export const CustomPagination = ({
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(totalProducts / productsPerPage);
-console.log("productsPerPage", productsPerPage)
-console.log("totalPages", totalPages)
   const handlePageChange = (event, page) => {
     setCurrentPage(page);
     paginate(page, category);

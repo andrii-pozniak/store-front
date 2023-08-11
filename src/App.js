@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import  HomePage from "./pages/HomePage";
 import  Category from "./pages/Category";
 import  Product from "./pages/Product";
+import {Guarantee} from "./pages/Guarantee/Guarantee"
 import  {SharedLayout} from "./SharedLayout/SharedLayout";
 import { PaymentDelivery } from "../src/pages/PaymentDelivery/PaymentDelivery";
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="category/:categoryName" element={<Category/>}/>
         <Route path='product' element={<Product/>}/>
         <Route path='paymentDelivery' element={<PaymentDelivery/>}/>
+        <Route path='guarantee' element={<Guarantee/>}/>
       </Route>
     </Routes>
  
