@@ -18,6 +18,7 @@ export const theme = {
       secondary: '#000000',
       accent: '#95CD41',
       activeAccent: '#FF6101',
+      colorTransparent: 'transparent'
     },
     space: [0, 2, 4, 8, 16, 20, 32, 48, 64, 128, 256],
     fonts: {
