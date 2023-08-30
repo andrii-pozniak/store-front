@@ -28,6 +28,15 @@ export const Header = () => {
 
   const [, setStatus] = useState("pending");
   const [data, setData] = useState(null);
+  const[openMenu, SetOpenMenu] = useState(false);
+
+  const toggleMenu = () => {
+    SetOpenMenu(!openMenu)
+  }
+
+  const handleMenu = () => {
+    toggleMenu()
+  }
 
   const orderLength = order.length;
   const removeForOrder = (id) => {
@@ -49,13 +58,32 @@ export const Header = () => {
       })();
     }
   }, [id]);
+  useEffect(() => {
+    if(openMenu){
+      document.body.style.overflow = "hidden";
+    }
+    if(!openMenu){
+      document.body.style.overflow = "";
+    }
+    
+    const close = (e) => {
+      if(e.code === 'Escape'){            
+        
+      }
+    };
+    window.addEventListener('keydown', close);
+    return () => {window.removeEventListener('keydown', close)};
+  }, [openMenu]);
+  console.log("openMenu", openMenu)
 
   const [isCartOpen, setCartOpen] = useState(false);
   const [isFavoriteOpen, setFavoriteOpen] = useState(false);
   const [isComparedOpen, setComparedOpen] = useState(false);
   return (
     <>
-      <HeaderInfo />
+      <HeaderInfo openMenu={openMenu}
+      handleMenu={handleMenu}
+      />
       <HeaderBody>
         <HeaderLogo secondWordColor="#333333" colorNumber="#333333" />
         <HeaderNavMenu
@@ -65,6 +93,8 @@ export const Header = () => {
           handleCart={() => setCartOpen(true)}
           handleFavorite={() => setFavoriteOpen(true)}
           handleCompared={() => setComparedOpen(true)}
+          openMenu={openMenu}
+          handleMenu={handleMenu}
         />
       </HeaderBody>
       <Basket
@@ -93,6 +123,7 @@ export const Header = () => {
         comparedOpen={isComparedOpen}
         closeCompared={() => setComparedOpen(false)}
       />
+      
     </>
   );
 };

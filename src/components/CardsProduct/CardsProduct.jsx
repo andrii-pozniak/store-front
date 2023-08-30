@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-// import { ProductCard } from "../ProductCard/ProductCard";
 import { CategoriesLink } from "../CategoryLink/CategoryLink";
 
 import {
@@ -65,14 +64,13 @@ export const CardsProducts = () => {
           category="discounted"
         />
       </PagePagination>
-
       <CardProduct>
         {discountedProducts && discountedProducts.length > 0 ? (
           <GetCurrentProducts
-          products={discountedProducts}
-          category={"discounted"}
-          pageNumber={currentPage.discounted} 
-          productsPerPage={productsPerPage}
+            products={discountedProducts}
+            category={"discounted"}
+            pageNumber={currentPage.discounted}
+            productsPerPage={productsPerPage}
           />
         ) : (
           <p>Нет товаров для отображения</p>
@@ -90,13 +88,13 @@ export const CardsProducts = () => {
       </PagePagination>
 
       <CardProduct>
-        {bestSellingProducts && bestSellingProducts.length > 0 ? (         
-            <GetCurrentProducts
+        {bestSellingProducts && bestSellingProducts.length > 0 ? (
+          <GetCurrentProducts
             products={bestSellingProducts}
             category={"bestSelling"}
-            pageNumber={currentPage.discounted} 
+            pageNumber={currentPage.discounted}
             productsPerPage={productsPerPage}
-            />          
+          />
         ) : (
           <p>Нет товаров для отображения</p>
         )}
@@ -114,12 +112,12 @@ export const CardsProducts = () => {
 
       <CardProduct>
         {newArrivals && newArrivals.length > 0 ? (
-           <GetCurrentProducts
-           products={newArrivals}
-           category={"newArrivals"}
-           pageNumber={currentPage.newArrivals} 
-           productsPerPage={productsPerPage}
-           />         
+          <GetCurrentProducts
+            products={newArrivals}
+            category={"newArrivals"}
+            pageNumber={currentPage.newArrivals}
+            productsPerPage={productsPerPage}
+          />
         ) : (
           <p>Нет товаров для отображения</p>
         )}

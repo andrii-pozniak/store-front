@@ -7,8 +7,7 @@ import { GetCurrentProducts } from "../CardsProduct/GetCurrentProducts";
 export const ProductCategoryCards = ({ data, category }) => {
   const [productsPerPage, setProductsPerPage] = useState(12); 
   const [currentPage , setCurrentPage] = useState(1);
-  console.log("category", category)
-  const paginate = (pageNumber) => {
+ const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
     
   };

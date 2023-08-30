@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Pagination } from "@mui/material";
+import { PaginationStyle } from "./CustomPagination.style";
 
 export const CustomPagination = ({
   productsPerPage,
@@ -15,7 +15,7 @@ export const CustomPagination = ({
   };
 
   return (
-    <Pagination
+    <PaginationStyle
       sx={{ ml: "auto" }}
       count={totalPages}
       page={currentPage}

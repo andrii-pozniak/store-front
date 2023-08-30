@@ -1,12 +1,38 @@
 import styled from "styled-components";
-import { Grid } from "@mui/material";
+import { Grid, Divider} from "@mui/material";
 
 export const StyleGrid = styled(Grid)`
   && {
     padding: 72px 25px 20px !important;
+    flex-basis: 23%;
+    @media screen and (max-width: 991px){     
+      flex-basis: 40%;
+      justify-content: space-between;
+    }
+    @media screen and (max-width: 767px){
+      padding: 42px 15px 10px !important;
+     
+    }
   }
 `;
+export const StyleGridNone = styled(Grid)`
 
+  && {
+    padding: 72px 25px 20px !important;
+    flex-basis: 23%;
+    @media screen and (max-width: 991px){
+      display: none !important;
+    }
+  }
+`;
+export const StyleDivider = styled(Divider)`
+  
+   
+    @media screen and (max-width: 991px){
+     display: none;
+    }
+ 
+`;
 export const StyleContainer = styled.div`
   background: ${(p) => p.theme.colors.dark};
   max-width: 1440px;
@@ -15,7 +41,6 @@ export const StyleContainer = styled.div`
 `;
 
 export const StyleTypography = styled.p`
-  width: 225px;
   margin: 0;
   margin-top: 14px;
   font-family: "Montserrat";
@@ -54,6 +79,9 @@ export const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 24px;
+  @media screen and (max-width: 767px){
+    margin-top: 10px;   
+    }
 `;
 export const ItemPage = styled.p`
   margin: 0;
@@ -72,15 +100,24 @@ export const HeaderPage = styled.p`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: ${(p) => p.theme.fontWeights.interMiddle};
-  font-size: ${(p) => p.theme.fontSizes.mn};
+  font-size: ${(p) => p.theme.fontSizes.m};
   line-height: ${(p) => p.theme.lineHeights.heading};
   color: ${(p) => p.theme.colors.accent};
+  @media screen and (max-width: 767px){
+    font-size: ${(p) => p.theme.fontSizes.m};
+    }
+    @media screen and (max-width: 425px){
+    font-size: ${(p) => p.theme.fontSizes.s};
+    }
 `;
 export const ContainerCard = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
   margin-top: 53px;
+  @media screen and (max-width: 767px){
+    margin-top: 15px;   
+    }
 `;
 export const Container = styled.div`
   display: flex;
@@ -90,6 +127,9 @@ export const ContainerSocial = styled.div`
   display: flex;
   margin-top: 16px;
   margin-bottom: 55px;
+   @media screen and (max-width: 767px){
+    margin-bottom: 35px;   
+    }
 `;
 export const Circle = styled.div`
   width: 36px;
@@ -107,4 +147,8 @@ export const ItemHeader = styled.p`
   font-size: ${(p) => p.theme.fontSizes.s};
   line-height: ${(p) => p.theme.lineHeights.heading};
   color: ${(p) => p.theme.colors.white};
+  @media screen and (max-width: 767px){
+    margin-top: 32px;
+  }
 `;
+

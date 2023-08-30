@@ -18,6 +18,12 @@ display: flex;
 align-items: center;
 padding: 8px 59px;
 background: ${(p) => p.theme.colors.gray};
+@media screen and (max-width: 728px){
+  padding: 8px 29px;
+};
+@media screen and (max-width: 428px){
+  padding: 8px 15px;
+}
 `;
 export const StyleArrowForwardIosIcon = styled(ArrowForwardIosIcon)`
 && {

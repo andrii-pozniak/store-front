@@ -14,11 +14,13 @@ export const theme = {
       backgroundGreen: '#0BB812',
       backgroundAlert: '#EA5C2B',
       grayBackground: 'rgba(255, 255, 255, 0.6)',
-      gray: '#D6D6D6',
+      gray: 'rgba(214, 214, 214, 0.7)',
       secondary: '#000000',
       accent: '#95CD41',
       activeAccent: '#FF6101',
-      colorTransparent: 'transparent'
+      colorTransparent: 'transparent',
+      blackBackground: 'rgba(0, 0, 0, 0.6)',
+
     },
     space: [0, 2, 4, 8, 16, 20, 32, 48, 64, 128, 256],
     fonts: {

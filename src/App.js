@@ -5,6 +5,7 @@ import  Category from "./pages/Category";
 import  Product from "./pages/Product";
 import {Guarantee} from "./pages/Guarantee/Guarantee"
 import  {SharedLayout} from "./SharedLayout/SharedLayout";
+import { Contacts } from "./pages/Contacts/Contacts";
 import { PaymentDelivery } from "../src/pages/PaymentDelivery/PaymentDelivery";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='product' element={<Product/>}/>
         <Route path='paymentDelivery' element={<PaymentDelivery/>}/>
         <Route path='guarantee' element={<Guarantee/>}/>
+        <Route path='contacts' element={<Contacts/>}/>
       </Route>
     </Routes>
  

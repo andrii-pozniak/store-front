@@ -3,7 +3,6 @@ import {
   AllProducts,
   BtnAllProducts,
   ProductsSvg,
-  Button,
   BlockBtn,
   AllMenu,
   BtnNav,
@@ -13,7 +12,7 @@ import {
   SvgBag,
   BtnMenu,
   BadgeStyle,
-  StyleLink
+  StyleLink,
 } from "./HeaderNavMenu.style";
 import { ListItemIcon } from "@mui/material";
 
@@ -23,22 +22,24 @@ export const HeaderNavMenu = ({
   handleFavorite,
   lengthFavorite,
   lengthCompared,
-  handleCompared
+  handleCompared,
+  openMenu,
+  handleMenu
 }) => {
-
+  console.log("first", openMenu);
   return (
-    <AllMenu>
+    <AllMenu>     
       <AllProducts>
         <ProductsSvg />
         <BtnAllProducts type="button">Всі товари</BtnAllProducts>
       </AllProducts>
-      <BlockBtn>
-        <Button>Акції</Button>
-        <StyleLink to={"paymentDelivery"}>ДОСТАВКА</StyleLink>
-        <StyleLink to={"guarantee"}>Гарантії</StyleLink>
-        <StyleLink to={"paymentDelivery"}>ОПЛАТА</StyleLink>
-        <Button>опт</Button>
-        <Button>контакти</Button>
+      <BlockBtn className={openMenu ? "active" : ""}>
+        <StyleLink onClick={handleMenu}>Акції</StyleLink>
+        <StyleLink to={"paymentDelivery"} onClick={handleMenu}>ДОСТАВКА</StyleLink>
+        <StyleLink to={"guarantee"} onClick={handleMenu}>Гарантії</StyleLink>
+        <StyleLink to={"paymentDelivery"} onClick={handleMenu}>ОПЛАТА</StyleLink>
+        <StyleLink onClick={handleMenu}>опт</StyleLink>
+        <StyleLink to={"contacts"} onClick={handleMenu}>контакти</StyleLink>
       </BlockBtn>
       <BtnNav>
         <BtnMenu type="button">
@@ -59,7 +60,6 @@ export const HeaderNavMenu = ({
             <SvgHeard onClick={handleCompared} />
           </BadgeStyle>
         </ListItemIcon>
-       
       </BtnNav>
     </AllMenu>
   );

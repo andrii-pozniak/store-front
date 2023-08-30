@@ -15,6 +15,7 @@ export const ColumnSecond = ({ uniqueCategories }) => {
           <ItemHooter key={index}>{category}</ItemHooter>
         ))}
       </ItemContainer>
+      
     </>
   );
 };

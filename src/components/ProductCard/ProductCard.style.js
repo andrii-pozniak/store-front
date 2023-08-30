@@ -3,7 +3,6 @@ import { ReactComponent as StarSvg } from "../Header/assest/star.svg";
 import { ReactComponent as FeedbackSvg } from "../Header/assest/feedback.svg";
 
 export const CardBody = styled.div`
-  /* height: 440px; */
   padding: 16px;
   background: ${(p) => p.theme.colors.white};
   border: 1px solid rgba(51, 51, 51, 0.2);
@@ -31,7 +30,7 @@ export const SvgFeedback = styled(FeedbackSvg)`
 `;
 
 export const Image = styled.img`
-  width: 276px;
+  max-width: 276px;
   height: 198px;
 `;
 
@@ -100,6 +99,10 @@ export const BtnBuy = styled.button`
   background: ${(p) => p.theme.colors.accentText};
   font-family: ${(p) => p.theme.fonts.body};
   font-style: normal;
+  @media screen and (max-width: 425px){
+    padding: 8px 10px;
+    font-size: ${(p) => p.theme.fontSizes.m};
+  }
 `;
 
 export const StatusPage = styled.p`

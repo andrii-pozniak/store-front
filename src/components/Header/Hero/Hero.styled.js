@@ -22,42 +22,88 @@ export const Image = styled.img`
   position: absolute;
   left: 14.5%;
   padding: 7px 0;
+ ;
+  @media screen and (max-width: 991px){
+width: 40%; 
+left: 8.0%;
+ };
+ @media screen and (max-width: 425px){
+width: 40%; 
+left: 15.0%;
+ }
 `;
 
 export const SvgNumber = styled(NumberSvg)`
   position: absolute;
   left: 50%;
   top: 15%;
+  @media screen and (max-width: 991px){
+width: 50% 
+ };
+ @media screen and (max-width: 425px){
+width: 40% 
+ };
+ 
 `;
 export const SvgOne = styled(OneSvg)`
   position: absolute;
   right: 41px;
   top: 22px;
   opacity: 0.74;
+  @media screen and (max-width: 991px){
+width: 50%;
+ };
+ @media screen and (max-width: 767px){
+display: none;
+ };
 `;
 export const SvgTwo = styled(TwoSvg)`
   position: absolute;
   left: 53.77%;
   bottom: 82px;
   opacity: 0.74;
+  @media screen and (max-width: 991px){
+width: 50%;
+ };
+ @media screen and (max-width: 767px){
+display: none;
+ };
 `;
 export const SvgThree = styled(ThreeSvg)`
   position: absolute;
   left: 40.39%;
   top: 24px;
   opacity: 0.74;
+  @media screen and (max-width: 991px){
+width: 50%;
+ };
+ @media screen and (max-width: 767px){
+display: none;
+ };
 `;
 export const SvgFour = styled(FourSvg)`
   position: absolute;
   left: 4.48%;
   top: 49px;
   opacity: 0.74;
+  @media screen and (max-width: 991px){
+width: 50%;
+ };
+ @media screen and (max-width: 767px){
+display: none;
+ };
 `;
 export const SvgFive = styled(FiveSvg)`
   position: absolute;
   left: 13.65%;
   top: 81.47%;
   opacity: 0.74;
+  @media screen and (max-width: 991px){
+width: 50%;
+ };
+ @media screen and (max-width: 767px){
+display: none;
+ };
 `;
 export const Month = styled.p`
   position: absolute;
@@ -70,6 +116,12 @@ export const Month = styled.p`
   font-size: ${(p) => p.theme.fontSizes.ll};
   line-height: ${(p) => p.theme.lineHeights.heading};
   color: ${(p) => p.theme.colors.dark};
+  @media screen and (max-width: 991px){
+    font-size: ${(p) => p.theme.fontSizes.lx};
+  }
+  @media screen and (max-width: 425px){
+    font-size: ${(p) => p.theme.fontSizes.mx};
+  };  
 `;
 export const SecondPage = styled.p`
   position: absolute;
@@ -79,9 +131,15 @@ export const SecondPage = styled.p`
   font-family: ${(p) => p.theme.fonts.body};
   font-style: normal;
   font-weight: ${(p) => p.theme.fontWeights.interBold};
-  font-size: ${(p) => p.theme.fontSizes.xl};
+  font-size: ${(p) => p.theme.fontSizes.lx};
   line-height: ${(p) => p.theme.lineHeights.heading};
   color: ${(p) => p.theme.colors.white};
+  @media screen and (max-width: 991px){
+    font-size: ${(p) => p.theme.fontSizes.lx};
+  };
+  @media screen and (max-width: 425px){
+    font-size: ${(p) => p.theme.fontSizes.mn};
+  }
 `;
 export const Rings = styled.div`
   position: absolute;
@@ -101,6 +159,9 @@ export const RingOne = styled.div`
   border-radius: ${(p) => p.theme.radii.round};
   background: transparent;
   opacity: 0.51;
+  @media screen and (max-width: 991px){
+display: none;
+ };
 `;
 export const RingSecond = styled.div`
   display: flex;
@@ -110,6 +171,9 @@ export const RingSecond = styled.div`
   border: 1px solid ${(p) => p.theme.colors.white};
   border-radius: ${(p) => p.theme.radii.round};
   background: transparent;
+  @media screen and (max-width: 991px){
+display: none;
+ };
 `;
 export const BtnBuy = styled.button`
   position: absolute;
@@ -124,6 +188,13 @@ export const BtnBuy = styled.button`
   line-height: ${(p) => p.theme.lineHeights.heading};
   color: ${(p) => p.theme.colors.white};
   background: ${(p) => p.theme.colors.dark};
+  @media screen and (max-width: 991px){
+    left: 50%;
+  top: 200px;
+ };
+ @media screen and (max-width: 425px){
+  padding: 10px 30px;
+  }
 `;
 export const Inform = styled.div`
   position: absolute;

@@ -1,44 +1,46 @@
 import React from "react";
-import { Grid, Divider } from "@mui/material";
+import { Grid } from "@mui/material";
 import { ColumnOne } from "./columnOne";
 import { ColumnSecond } from "./columnSecond";
 import { ColumnThird } from "./colunmThird";
 import { ColumnFour } from "./colunmFour";
-import { StyleContainer, StyleGrid } from "./Hooter.Style";
+import { StyleContainer, StyleGrid, StyleGridNone, StyleDivider } from "./Hooter.Style";
 
 export const Hooter = ({ uniqueCategories }) => {
-  // console.log("data", uniqueCategories)
   return (
     <>
-     <StyleContainer disableGutters maxWidth={false}>
-        <Grid container spacing={4}margin={0} width={"100%"}>
-          <StyleGrid item xs={true} >
+      <StyleContainer >
+        <Grid container spacing={0}  >
+          <StyleGrid item xs={true} sx={{ padding: "0px" }}>
             <ColumnOne />
           </StyleGrid>
-
-          <Divider
+          <StyleDivider
             orientation="vertical"
             flexItem
             color="#FFFFFF"
             height="100%"
           />
-          <StyleGrid item xs={true} sx={{ paddingTop: "72px" }}>
-            <ColumnSecond uniqueCategories={uniqueCategories} />
-          </StyleGrid>
-          <Divider
-            orientation="vertical"
-            flexItem
-            color="#FFFFFF"
-            height="100%"
-          />
-          <StyleGrid item xs={true}>
+          
+            <StyleGridNone item xs={true}  sx={{ paddingTop: "72px" }}>
+           
+              <ColumnSecond uniqueCategories={uniqueCategories} />
+             
+            </StyleGridNone>
+            
+          <StyleDivider orientation="vertical" flexItem color="#FFFFFF" />
+          {/*  */}
+          <StyleGridNone item xs={true} >
+          
             <ColumnThird />
-          </StyleGrid>
-          <Divider orientation="vertical" flexItem color="#FFFFFF" />
-          <StyleGrid item xs={true} sx={{ padding: "0px" }}>
+           
+          </StyleGridNone>
+          
+          <StyleDivider orientation="vertical" flexItem color="#FFFFFF" />
+         
+          <StyleGrid item xs={true}  sx={{ padding: "0px" }}>
             <ColumnFour />
           </StyleGrid>
-          <Divider
+          <StyleDivider
             orientation="vertical"
             flexItem
             color="#FFFFFF"
@@ -46,8 +48,6 @@ export const Hooter = ({ uniqueCategories }) => {
           />
         </Grid>
       </StyleContainer>
-   {/* <CategoriesLink uniqueCategories={uniqueCategories}/> */}
     </>
-     
   );
 };
