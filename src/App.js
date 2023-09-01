@@ -7,6 +7,8 @@ import {Guarantee} from "./pages/Guarantee/Guarantee"
 import  {SharedLayout} from "./SharedLayout/SharedLayout";
 import { Contacts } from "./pages/Contacts/Contacts";
 import { PaymentDelivery } from "../src/pages/PaymentDelivery/PaymentDelivery";
+import { Stock } from './pages/Stock/Stock';
+import { Wholesale } from './pages/Wholesale/Wholesale';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path='paymentDelivery' element={<PaymentDelivery/>}/>
         <Route path='guarantee' element={<Guarantee/>}/>
         <Route path='contacts' element={<Contacts/>}/>
+        <Route path='stock' element={<Stock/>}/>
+        <Route path='wholesale' element={<Wholesale/>}/>
       </Route>
     </Routes>
  

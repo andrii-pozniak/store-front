@@ -34,11 +34,11 @@ export const HeaderNavMenu = ({
         <BtnAllProducts type="button">Всі товари</BtnAllProducts>
       </AllProducts>
       <BlockBtn className={openMenu ? "active" : ""}>
-        <StyleLink onClick={handleMenu}>Акції</StyleLink>
+        <StyleLink to={'stock'} onClick={handleMenu}>Акції</StyleLink>
         <StyleLink to={"paymentDelivery"} onClick={handleMenu}>ДОСТАВКА</StyleLink>
         <StyleLink to={"guarantee"} onClick={handleMenu}>Гарантії</StyleLink>
         <StyleLink to={"paymentDelivery"} onClick={handleMenu}>ОПЛАТА</StyleLink>
-        <StyleLink onClick={handleMenu}>опт</StyleLink>
+        <StyleLink to={'wholesale'} onClick={handleMenu}>опт</StyleLink>
         <StyleLink to={"contacts"} onClick={handleMenu}>контакти</StyleLink>
       </BlockBtn>
       <BtnNav>
