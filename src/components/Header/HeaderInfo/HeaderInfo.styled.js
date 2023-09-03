@@ -31,7 +31,7 @@ export const Page = styled.p`
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1, 25;
+  line-height: 1.25;
   color: #ffffff;
 `;
 export const Map = styled.a`

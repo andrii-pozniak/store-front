@@ -27,6 +27,13 @@ export const HeaderNavMenu = ({
   handleMenu
 }) => {
   console.log("first", openMenu);
+  const isMobile = window.innerWidth <= 991;
+
+  const handleClick = () => {
+    if (isMobile) {
+      handleMenu(); 
+    }
+  };
   return (
     <AllMenu>     
       <AllProducts>
@@ -34,12 +41,12 @@ export const HeaderNavMenu = ({
         <BtnAllProducts type="button">Всі товари</BtnAllProducts>
       </AllProducts>
       <BlockBtn className={openMenu ? "active" : ""}>
-        <StyleLink to={'stock'} onClick={handleMenu}>Акції</StyleLink>
-        <StyleLink to={"paymentDelivery"} onClick={handleMenu}>ДОСТАВКА</StyleLink>
-        <StyleLink to={"guarantee"} onClick={handleMenu}>Гарантії</StyleLink>
-        <StyleLink to={"paymentDelivery"} onClick={handleMenu}>ОПЛАТА</StyleLink>
-        <StyleLink to={'wholesale'} onClick={handleMenu}>опт</StyleLink>
-        <StyleLink to={"contacts"} onClick={handleMenu}>контакти</StyleLink>
+        <StyleLink to={'stock'} onClick={handleClick}>Акції</StyleLink>
+        <StyleLink to={"paymentDelivery"} onClick={handleClick}>ДОСТАВКА</StyleLink>
+        <StyleLink to={"guarantee"} onClick={handleClick}>Гарантії</StyleLink>
+        <StyleLink to={"paymentDelivery"} onClick={handleClick}>ОПЛАТА</StyleLink>
+        <StyleLink to={'wholesale'} onClick={handleClick}>опт</StyleLink>
+        <StyleLink to={"contacts"} onClick={handleClick}>контакти</StyleLink>
       </BlockBtn>
       <BtnNav>
         <BtnMenu type="button">

@@ -21,7 +21,7 @@ export const HeaderInfo = ({ openMenu, handleMenu }) => {
         <button type="button">UK</button>
       </HeaderUp>
       <BurgerMenu
-        onClick={() => handleMenu()}
+        onClick={handleMenu}
         className={openMenu ? "active" : ""}
       >
         <span></span>
