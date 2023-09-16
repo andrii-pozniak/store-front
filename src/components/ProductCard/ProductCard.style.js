@@ -99,6 +99,10 @@ export const BtnBuy = styled.button`
   background: ${(p) => p.theme.colors.accentText};
   font-family: ${(p) => p.theme.fonts.body};
   font-style: normal;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
   @media screen and (max-width: 425px){
     padding: 8px 10px;
     font-size: ${(p) => p.theme.fontSizes.m};

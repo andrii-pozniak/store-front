@@ -74,7 +74,6 @@ export const Header = () => {
     window.addEventListener('keydown', close);
     return () => {window.removeEventListener('keydown', close)};
   }, [openMenu]);
-  console.log("openMenu", openMenu)
 
   const [isCartOpen, setCartOpen] = useState(false);
   const [isFavoriteOpen, setFavoriteOpen] = useState(false);

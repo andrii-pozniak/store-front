@@ -1,20 +1,24 @@
 import styled from "styled-components";
 import { BiMap } from "react-icons/bi";
+import { Link } from "react-router-dom";
+
+export const StyleLink = styled(Link)`
+
+`;
 
 export const Container = styled.div`
+
 @media screen and (max-width: 991px){
     padding: 25px 20px;
   }
-
 `;
 export const HeaderUp = styled.div`
   display: flex;
   align-items: center;
-  
+  padding: 0 58px;
   background: #333333;
   @media screen and (max-width: 991px){
-    display: none;
-    
+    display: none;    
   }
 `;
 export const PhoneNumber = styled.p`
@@ -33,6 +37,14 @@ export const Page = styled.p`
   font-size: 14px;
   line-height: 1.25;
   color: #ffffff;
+`;
+export const Triangle = styled.div`
+width: 0;
+height: 0;
+border-left: 4px solid transparent;
+border-right: 4px solid transparent;
+border-top: 6px solid white;
+transition: transform 0.3s ease 0s;
 `;
 export const Map = styled.a`
   display: flex;

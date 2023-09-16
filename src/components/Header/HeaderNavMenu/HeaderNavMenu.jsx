@@ -26,7 +26,6 @@ export const HeaderNavMenu = ({
   openMenu,
   handleMenu
 }) => {
-  console.log("first", openMenu);
   const isMobile = window.innerWidth <= 991;
 
   const handleClick = () => {

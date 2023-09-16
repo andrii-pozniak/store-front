@@ -9,6 +9,8 @@ import { Contacts } from "./pages/Contacts/Contacts";
 import { PaymentDelivery } from "../src/pages/PaymentDelivery/PaymentDelivery";
 import { Stock } from './pages/Stock/Stock';
 import { Wholesale } from './pages/Wholesale/Wholesale';
+import { RegisterPage } from './pages/Auth/RegisterPage';
+import { LoginPage } from './pages/Auth/LoginPage';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path='contacts' element={<Contacts/>}/>
         <Route path='stock' element={<Stock/>}/>
         <Route path='wholesale' element={<Wholesale/>}/>
+        <Route path='register' element={<RegisterPage/>}/>
+        <Route path='login' element={<LoginPage/>}/>
       </Route>
     </Routes>
  
