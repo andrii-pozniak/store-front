@@ -30,7 +30,6 @@ export const FavoriteCard = ({
     return false;
   });
 }, [removeForFavorite]);
-
 useEffect(() => {
   const uniqueFavorite = removeDuplicatesById(favorite);
   SetNewFavorite(uniqueFavorite);

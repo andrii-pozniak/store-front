@@ -11,7 +11,6 @@ import {
 } from "./HeaderInfo.styled";
 import PersonIcon from '@mui/icons-material/Person';
 import { ModalSample } from "../../Modal/Modal";
-import { Link } from "react-router-dom";
 import { Auth } from "../../Auth/Auth";
 export const HeaderInfo = ({ openMenu, handleMenu }) => {
   const[menuOpen, SetMenuOpen] = useState(false);
@@ -24,9 +23,7 @@ export const HeaderInfo = ({ openMenu, handleMenu }) => {
   const toggleMenu =() => {
     SetMenuOpen(!menuOpen)
   }
-  // const onChangeMenu = () => {
-  //   toggleMenu()
-  // }
+  
   return (
     <Container>
       <HeaderUp>
@@ -40,7 +37,10 @@ export const HeaderInfo = ({ openMenu, handleMenu }) => {
         <PersonIcon style={{fill: "white", marginRight: "6px"}}/>
         <Page>Особистий кабінет</Page>
         <Triangle  style={{ marginLeft: "6px"}}
-        onClick={toggleModalRegister}
+        onClick={() => {
+          toggleModalRegister();
+          toggleMenu();
+        }}
         className={menuOpen ? "active" : ""}
         />
       </HeaderUp>

@@ -6,7 +6,7 @@ export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const [selectedCardId, setSelectedCardId] = useState(null);
   const [order, setOrder] = useState([]);
-  const [favorite, setFavorite] = useState([0]);
+  const [favorite, setFavorite] = useState([]);
   const [compared, setCompared] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
   const [, setStatus] = useState("pending");

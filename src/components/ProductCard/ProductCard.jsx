@@ -127,8 +127,8 @@ const handleComparedCheckboxChange = () => {
       <CodCategory>
         <CategoryPage>
           {" "}
-          {additionalCategory.map((category) => (
-            <CategoryItem key={category} category={category} />
+          {additionalCategory.map((category, index) => (
+            <CategoryItem key={index} category={category} />
           ))}
         </CategoryPage>
         <CodPage>Код: {codeProduct}</CodPage>

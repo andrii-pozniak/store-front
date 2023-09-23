@@ -5,6 +5,7 @@ import { ContainerCard } from "./Category.style";
 
 export const YouSaw = () => {
   const { order, favorite, compared } = useContext(DataContext);
+
   return (
     <>
       {(Boolean(order.length) ||
@@ -13,10 +14,10 @@ export const YouSaw = () => {
         <>
           <h2>Ви дивилися</h2>
           <ContainerCard>
-            {Boolean(order.length) &&
+            {Boolean(order.length > 0) &&
               order?.map((item) => (
                 <ProductCard
-                  key={item.name}
+                  key={item._id}
                   id={item._id}
                   name={item.name}
                   imageURL={item.imageURL}
@@ -27,10 +28,10 @@ export const YouSaw = () => {
                 />
               ))}
 
-            {Boolean(compared.length) &&
+            {Boolean(compared.length > 0) &&
               compared?.map((item) => (
                 <ProductCard
-                  key={item.name}
+                  key={item._id}
                   id={item._id}
                   name={item.name}
                   imageURL={item.imageURL}
@@ -40,10 +41,10 @@ export const YouSaw = () => {
                   status={item.status}
                 />
               ))}
-            {Boolean(favorite.length) &&
+            {Boolean(favorite.length > 0) &&
               favorite?.map((item) => (
                 <ProductCard
-                  key={item.name}
+                  key={item._id}
                   id={item._id}
                   name={item.name}
                   imageURL={item.imageURL}

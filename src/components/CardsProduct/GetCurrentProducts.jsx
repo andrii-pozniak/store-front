@@ -17,6 +17,7 @@ export const GetCurrentProducts = ({products, productsPerPage, category, pageNum
         {getCurrentProducts (products, category, pageNumber).map((item) => (
             <ProductCard
               key={item._id}
+              id={item._id}
               name={item.name}
               imageURL={item.imageURL}
               additionalCategory={item.additionalCategory}

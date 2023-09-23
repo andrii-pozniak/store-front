@@ -43,7 +43,6 @@ export const Header = () => {
     setOrder((prevOrder) => prevOrder.filter((item) => item.id !== id));
   };
 
-  
   useEffect(() => {
     if (id) {
       (async () => {
