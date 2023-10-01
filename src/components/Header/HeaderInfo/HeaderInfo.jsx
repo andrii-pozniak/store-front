@@ -12,9 +12,16 @@ import {
 import PersonIcon from '@mui/icons-material/Person';
 import { ModalSample } from "../../Modal/Modal";
 import { Auth } from "../../Auth/Auth";
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn, selectUser } from "../../../redux/auth/selectors";
+
 export const HeaderInfo = ({ openMenu, handleMenu }) => {
   const[menuOpen, SetMenuOpen] = useState(false);
   const[showModal, SetShowModal ] = useState(false)
+
+  const isLoggedIn = useSelector(selectIsLoggedIn)
+  const user = useSelector(selectUser)
+  console.log("user", user)
 
   const toggleModalRegister = () => {
     SetShowModal(!showModal)
@@ -35,7 +42,8 @@ export const HeaderInfo = ({ openMenu, handleMenu }) => {
         <button type="button">UK</button>
         <Triangle  style={{ margin: "0 42px 0 4px"}}/>
         <PersonIcon style={{fill: "white", marginRight: "6px"}}/>
-        <Page>Особистий кабінет</Page>
+        {isLoggedIn ? <Page>{user.name}</Page> : <Page>Особистий кабінет</Page>}
+        
         <Triangle  style={{ marginLeft: "6px"}}
         onClick={() => {
           toggleModalRegister();

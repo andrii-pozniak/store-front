@@ -34,5 +34,5 @@ export const Input = styled.input`
   line-height: 16px;
   padding: 12px 15px;
   margin-top: 18px;
-  text-transform: uppercase;
+  
 `;

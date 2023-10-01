@@ -2,7 +2,7 @@ import styled from "styled-components";
 import GoogleIcon from "@mui/icons-material/Google";
 import { Link } from "react-router-dom";
 import { FaFacebookF } from "react-icons/fa";
-import { Button } from "@mui/material";
+// import { Button } from "@mui/material";
 
 export const StyleLink = styled(Link)`
   display: inline-block;
@@ -76,14 +76,14 @@ export const Items = styled.p`
   font-weight: ${(p) => p.theme.fontWeights.middle};
   font-size: ${(p) => p.theme.fontSizes.s};
   line-height: ${(p) => p.theme.lineHeights.body};
-  /* text-transform: uppercase; */
 `;
-export const ButtonStyle = styled(Button)`
-  &.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+export const Form = styled.form``;
+export const ButtonStyle = styled.button`
+  
     display: flex;
     padding: 10px 22px;
     margin: 15px auto 0 auto;
-    border-radius: 0px;
+    border: none;
     background: ${(p) => p.theme.colors.dark};
     text-decoration: none;
     font-family: ${(p) => p.theme.fonts.body};
@@ -95,5 +95,5 @@ export const ButtonStyle = styled(Button)`
     text-align: center;
     color: ${(p) => p.theme.colors.white};
     cursor: pointer;
-  }
+  
 `;

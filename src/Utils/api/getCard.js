@@ -1,17 +1,17 @@
 import axios from "axios";
 
-axios.defaults.baseURL = 'http://localhost:5000/products';
+axios.defaults.baseURL = 'http://localhost:5000/';
 
 export const fetchProductCards = async additionalCategory => {
     
-    const response = await axios.get(``);
+    const response = await axios.get(`products`);
   return response.data
 }
 
 export const fetchCategoriesName = async (categoryName) => {
   try {
 
-    const response = await axios.get(`/${categoryName}`);
+    const response = await axios.get(`products/${categoryName}`);
     return response.data;
   } catch (error) {
   }
@@ -20,7 +20,7 @@ export const fetchCategoriesName = async (categoryName) => {
 export const fetchCartId = async id => {
   try {
 
-    const response = await axios.get(`/product/${id}`);
+    const response = await axios.get(`products/product/${id}`);
     return response.data;
   } catch (error) {
   }
