@@ -21,7 +21,6 @@ export const HeaderInfo = ({ openMenu, handleMenu }) => {
 
   const isLoggedIn = useSelector(selectIsLoggedIn)
   const user = useSelector(selectUser)
-  console.log("user", user)
 
   const toggleModalRegister = () => {
     SetShowModal(!showModal)
