@@ -41,7 +41,7 @@ export const HeaderInfo = ({ openMenu, handleMenu }) => {
         <button type="button">UK</button>
         <Triangle  style={{ margin: "0 42px 0 4px"}}/>
         <PersonIcon style={{fill: "white", marginRight: "6px"}}/>
-        {isLoggedIn ? <Page>{user.name}</Page> : <Page>Особистий кабінет</Page>}
+        {!isLoggedIn ? <Page>Особистий кабінет</Page> : <Page>{user.name}</Page> }
         
         <Triangle  style={{ marginLeft: "6px"}}
         onClick={() => {
