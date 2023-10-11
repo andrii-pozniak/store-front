@@ -20,7 +20,7 @@ import {
   StarBody,
   CardInfo,
 } from "./ProductCard.style";
-
+import NoPhoto from '../../components/Header/assest/iconsNo.png';
 import {
   SvgHeard, CheckedSvgHeard 
 } from "../Header/HeaderNavMenu/HeaderNavMenu.style";
@@ -133,7 +133,7 @@ const handleComparedCheckboxChange = () => {
         </CategoryPage>
         <CodPage>Код: {codeProduct}</CodPage>
       </CodCategory>
-      <Image src={imageURL} alt={name} />
+      {imageURL && imageURL !== ""? <Image src={imageURL} alt={name} />: <Image src={NoPhoto} alt="NoPhoto"/>}
       <NamePage>{name}</NamePage>
       <CardInfo>
         <StatusPage status={status}>{status}</StatusPage>
