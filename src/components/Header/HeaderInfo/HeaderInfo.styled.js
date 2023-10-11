@@ -45,6 +45,7 @@ border-left: 4px solid transparent;
 border-right: 4px solid transparent;
 border-top: 6px solid white;
 transition: transform 0.3s ease 0s;
+cursor: pointer;
 `;
 export const Map = styled.a`
   display: flex;

@@ -64,9 +64,17 @@ export const BadgeStyle = styled(Badge)`
 `;
 export const SvgSearch = styled(SearchSvg)`
   margin-left: 0px;
+  cursor: pointer;
+  @media screen and (max-width: 425px){
+   width: 16px;   
+  }
 `;
 export const SvgHeard = styled(HeardSvg)`
   margin-left: 0px;
+  cursor: pointer;
+  @media screen and (max-width: 425px){
+   width: 16px;   
+  }
 `;
 export const CheckedSvgHeard = styled(HeardSvg)`
   margin-left: 0px;
@@ -75,9 +83,17 @@ export const CheckedSvgHeard = styled(HeardSvg)`
 `;
 export const SvgWeight = styled(WeightSvg)`
   margin-left: 0px;
+  cursor: pointer;
+  @media screen and (max-width: 425px){
+   width: 16px;   
+  }
 `;
 export const SvgBag = styled(BagSvg)`
   margin-left: 0px;
+  cursor: pointer;
+  @media screen and (max-width: 425px){
+   width: 16px;   
+  }
 `;
 export const ProductsSvg = styled(AllProductsSvg)`
   margin-left: 21px;
@@ -90,6 +106,9 @@ export const BtnNav = styled.div`
     grid-template-columns: repeat(4, 1fr);
     margin-left: auto;
     margin-right: auto;
+  };
+  @media screen and (max-width: 425px) {
+    grid-template-columns: repeat(4, 40px);
   }
 `;
 export const Button = styled.button`

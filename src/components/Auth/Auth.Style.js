@@ -18,6 +18,7 @@ export const StyleLink = styled(Link)`
   text-transform: uppercase;
   text-decoration: none;
   color: ${(p) => p.theme.colors.dark};
+  cursor: pointer;
 `;
 export const ButtonStyle = styled.button`
   border: none;
